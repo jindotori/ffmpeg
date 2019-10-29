@@ -1,14 +1,14 @@
 #!/bin/bash
 #Change NDK to your Android NDK location
 if [ "$NDK" = "" ]; then
-    NDK=/c/AndroidNDK
+    NDK=/Users/jason/workspace/tools/android-ndk-r15c
 fi
 if [ "$NDK_PLATFORM" = "" ]; then
     NDK_PLATFORM=$NDK/platforms/android-9/arch-arm
 fi
 if [ "$NDK_PREBUILT" = "" ]; then
-    NDK_PREBUILT=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64
-    NDK_PREBUILTLLVM=$NDK/toolchains/llvm/prebuilt/windows-x86_64
+    NDK_PREBUILT=$NDK/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64
+    NDK_PREBUILTLLVM=$NDK/toolchains/llvm/prebuilt/darwin-x86_64
 fi
 
 set -e
@@ -74,6 +74,7 @@ AUDIO_ENCODERS="\
     --enable-encoder=pcm_s16le"
 
 MUXERS="\
+    --enable-muxer=mpegts \
     --enable-muxer=avi"
 
 
